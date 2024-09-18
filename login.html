@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <style>
+            h1,
+            form {
+                text-align: center;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            input {
+                padding: 8px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <form action="" >
+            <input type="text" placeholder="Username" id="username" required/>
+            <input type="password" placeholder="Password" id="password" required/>
+            <input type="button" value="Login" id="tombol" />
+        </form>
+
+        <script>
+             const bnTombol = document.querySelector("#tombol");
+             const txUsername = document.querySelector("#username");
+             const txPassword = document.querySelector("#password");
+
+             bnTombol.addEventListener("click", function () {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const validEmailFormat = emailRegex.test(txUsername.value);
+                const correctEmail = txUsername.value === "faessaf@gmail.com";
+                const validPassword = txPassword.value === "fazsavero";
+                
+                if (!validEmailFormat) {
+                    alert("Masukkan email yang valid. Silakan dicek kembali!!");
+                } else if (!correctEmail) {
+                    alert("Hanya email valid yang diterima. Silakan dicek kembali!!");
+                } else if (!validPassword) {
+                    alert("Password anda salah. Silakan dicek kembali!!");
+                } else {
+                    window.location = "index.html"; 
+                }
+             });
+        </script>
+    </body>
+</html>
